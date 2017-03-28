@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstCardType.cs" />
+    <Compile Include="tstPayment.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShoeWars\ShoeWars.csproj">
