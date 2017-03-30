@@ -12,7 +12,7 @@ namespace ShoeWars
         private Int32 mCustomerID;
         private Int32 mTotal;
         private DateTime mDatePurchased;
-
+        //Matthew was here
 
         //public property for the CardDetails
         public String CardDetails 
