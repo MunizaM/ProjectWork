@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ShoeWars;
 
-namespace ShoeWars
+namespace OrderTesting
 {
     [TestClass]
     public class tstOrderLine
@@ -63,14 +63,96 @@ namespace ShoeWars
         {
             //create an instance of the class I want to create
             clsOrderLine AnOrderLine = new clsOrderLine();
-            // boolean variable to store the result of the validation 
-            Boolean OK = false;
-            //create some test data to assign to the property
-            String SomeOrder = "1";
-            OK = AnOrderLine.Valid(SomeOrder);
+            //boolean variable to store the result of the validation
+            Boolean OK = true;
+            //Create some test data to pass to the method
+            String OrderID = "5";
+            String ProductID = "5";
+            //invoke the method
+            OK = AnOrderLine.Valid(OrderID, ProductID);
             //test to see that the result is correct
             Assert.IsTrue(OK);
+        }
 
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class I want to create
+            clsOrderLine AnOrderLine = new clsOrderLine();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //Create some test data to use with the method
+            Int32 OrderLineID = 1;
+            //Invoke the method
+            Found = AnOrderLine.Find(OrderLineID);
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestOrderLineIDFoundOK()
+        {
+            //create an instance of the class I want to create
+            clsOrderLine AnOrderLine = new clsOrderLine();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //Create some test data to use with the method
+            Int32 OrderLineID = 1;
+            //Invoke the method
+            Found = AnOrderLine.Find(OrderLineID);
+            //checkthe Order ID
+            if (AnOrderLine.OrderLineID != 1)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestOrderIDFoundOK()
+        {
+            //create an instance of the class I want to create
+            clsOrderLine AnOrderLine = new clsOrderLine();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //Create some test data to use with the method
+            Int32 OrderLineID = 1;
+            //Invoke the method
+            Found = AnOrderLine.Find(OrderLineID);
+            //checkthe Order ID
+            if (AnOrderLine.OrderID != "1")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestProductIDFoundOK()
+        {
+            //create an instance of the class I want to create
+            clsOrderLine AnOrderLine = new clsOrderLine();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //Create some test data to use with the method
+            Int32 OrderLineID = 1;
+            //Invoke the method
+            Found = AnOrderLine.Find(OrderLineID);
+            //checkthe product ID
+            if (AnOrderLine.ProductID != "1")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
         }
     }
 }

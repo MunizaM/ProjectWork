@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ShoeWars;
 
-namespace ShoeWars
+namespace OrderTesting
 {
     [TestClass]
     public class tstOrder
