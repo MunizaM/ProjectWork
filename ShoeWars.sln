@@ -7,6 +7,48 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeWars", "ShoeWars\ShoeWa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFramework", "TestFramework\TestFramework.csproj", "{F3C710A1-9D55-44C2-8517-FDA4D7BB1ABF}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BackEnd", "..\BackEnd\", "{0F8E7A57-D7D6-4EC3-8457-4D4261E08A0E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55292"
+		Debug.AspNetCompiler.PhysicalPath = "..\BackEnd\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55292\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55292"
+		Release.AspNetCompiler.PhysicalPath = "..\BackEnd\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55292\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55292"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FrontEnd(1)", "..\FrontEnd\", "{B43E302A-E7E2-49AA-AC0C-F1FB13D265F3}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56141"
+		Debug.AspNetCompiler.PhysicalPath = "..\FrontEnd\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56141\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56141"
+		Release.AspNetCompiler.PhysicalPath = "..\FrontEnd\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56141\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56141"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +63,14 @@ Global
 		{F3C710A1-9D55-44C2-8517-FDA4D7BB1ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3C710A1-9D55-44C2-8517-FDA4D7BB1ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3C710A1-9D55-44C2-8517-FDA4D7BB1ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F8E7A57-D7D6-4EC3-8457-4D4261E08A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8E7A57-D7D6-4EC3-8457-4D4261E08A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8E7A57-D7D6-4EC3-8457-4D4261E08A0E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8E7A57-D7D6-4EC3-8457-4D4261E08A0E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B43E302A-E7E2-49AA-AC0C-F1FB13D265F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B43E302A-E7E2-49AA-AC0C-F1FB13D265F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B43E302A-E7E2-49AA-AC0C-F1FB13D265F3}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B43E302A-E7E2-49AA-AC0C-F1FB13D265F3}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
