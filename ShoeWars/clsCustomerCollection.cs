@@ -12,37 +12,38 @@ namespace ShoeWars
         //constructor for the class
         public clsCustomerCollection()
         {
-            //Create the items of the test data
-            clsCustomer TestItem = new clsCustomer();
-            //set its properties
-            TestItem.CustomerID = 1;
-            TestItem.Forename = "Susan";
-            TestItem.Surname = "Hill";
-            TestItem.Address = "High Place";
-            TestItem.Town = "Bradford";
-            TestItem.Postcode = "BD72HQ";
-            TestItem.DateOfBirth = DateTime.Now.Date;
-            TestItem.Mobile = "07323232323";
-            TestItem.Active = true;
-            //add the item to the test list 
-            mCustomerList.Add(TestItem);
-            //re initialise the object for some new data
-            TestItem = new clsCustomer();
-            //set its properties
-            TestItem.CustomerID = 2;
-            TestItem.Forename = "Muniza";
-            TestItem.Surname = "Malamji";
-            TestItem.Address = "Field Lane";
-            TestItem.Town = "Leicester";
-            TestItem.Postcode = "LE15SP";
-            TestItem.DateOfBirth = DateTime.Now.Date;
-            TestItem.Mobile = "07123456789";
-            TestItem.Active = true;
-            //add the item to the test list
-            mCustomerList.Add(TestItem);
-            
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount = 0;
+            //object for data connection
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure
+            DB.Execute("sproc_tbl_Customers_SelectAll");
+            //get the count of records
+            RecordCount = DB.Count;
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank customer
+                clsCustomer AnCustomer = new clsCustomer();
+                //read in the fields from the current record
+                AnCustomer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerID"]);
+                AnCustomer.Forename = Convert.ToString(DB.DataTable.Rows[Index]["Forename"]);
+                AnCustomer.Surname = Convert.ToString(DB.DataTable.Rows[Index]["Surname"]);
+                AnCustomer.Address = Convert.ToString(DB.DataTable.Rows[Index]["Address"]);
+                AnCustomer.Town = Convert.ToString(DB.DataTable.Rows[Index]["Town"]);
+                AnCustomer.Postcode = Convert.ToString(DB.DataTable.Rows[Index]["Postcode"]);
+                AnCustomer.DateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfBirth"]);
+                AnCustomer.Mobile = Convert.ToString(DB.DataTable.Rows[Index]["Mobile"]);
+                AnCustomer.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
+                //add the record to the private data member
+                mCustomerList.Add(AnCustomer);
+                //point at the next record
+                Index++;
 
-        }
+
+            }
 
         //public property for count
         public int Count
@@ -72,7 +73,29 @@ namespace ShoeWars
                 mCustomerList = value;
             }
         }
-        
-        public clsCustomer ThisCustomer { get; set; }
-    }
+
+
+        public clsCustomer ThisCustomer
+        {
+            get
+            {
+                //return the private data
+                return mThisCustomer;
+            }
+            set
+            {
+                //set the private data
+                mThisCustomer = value;
+            }
+        }
+
+        public int Add()
+        {
+            //adds a new record to the database based on the values of mThisCustomer
+            //set the primary key value of the new record
+            mThisCustomer.CustomerID = 2;
+            //return the primary key of the new record
+            return mThisCustomer.CustomerID;
+        }
 }
+    )
